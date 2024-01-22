@@ -19,7 +19,8 @@ docker-compose run client
 ```
 
 # Configuring the train model
-Checkout the `config.yaml` for the model configuration. The current model `prajjwal1/bert-tiny` is running fast on CPU.
+Checkout the `config.yaml` for the Hugging Face model configuration.
+The current model `prajjwal1/bert-tiny` is running fast on CPU.
 
 # API definition
 
