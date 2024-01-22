@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'
 services:
   train:
     build: .
@@ -7,6 +7,23 @@ services:
       - ./model:/model
       - ./data:/data
       - ./config.yaml:/app/config.yaml
+    profiles:
+      - norun
+  train_cuda:
+    build:
+      context: .
+      dockerfile: cuda.Dockerfile
+    command: ["python", "train.py"]
+    volumes:
+      - ./model:/model
+      - ./data:/data
+      - ./config.yaml:/app/config.yaml
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [gpu]
     profiles:
       - norun
   server:

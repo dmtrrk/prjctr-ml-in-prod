@@ -5,8 +5,11 @@ _Kaggle_: https://www.kaggle.com/competitions/commonlitreadabilityprize/data
 
 # How to start
 ```
-# train the model
+# train the model with CPU
 docker-compose run train
+
+# train the model with CUDA
+docker-compose run train_cuda
 
 # start a server
 docker-compose up -d server
