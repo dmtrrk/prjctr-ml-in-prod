@@ -15,13 +15,15 @@ docker-compose up -d server
 docker-compose run client
 ```
 
+# Configuring the train model
+Checkout the `config.yaml` for the model configuration
+
 # API definition
 
 1. Getting a prediction based on a text
 ```
 POST /predict
 <excerpts>
-
 ```
 
 2. Get metrics
